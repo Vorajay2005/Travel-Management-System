@@ -15,6 +15,10 @@ $result = mysqli_query($conn, $sql);
 
 <div class="container">
     <h2>All Bookings</h2>
+    <div style="margin-bottom: 20px;">
+    <a href="create_booking.php" class="btn btn-success">Create New Booking</a>
+    
+</div>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -36,7 +40,7 @@ $result = mysqli_query($conn, $sql);
                     <td><?php echo htmlspecialchars($row['comment']); ?></td>
                 </tr>
             <?php endwhile; ?>
-        </tbody>
+        </tbody> 
     </table>
 </div>
 

@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
@@ -18,6 +19,7 @@ $all_result = mysqli_query($conn, "SELECT * FROM packages");
     <div style="margin-bottom: 20px;">
         <a href="create_package.php" class="btn btn-success">Create New Package</a>
         <a href="bookings.php" class="btn btn-info">Go to Bookings</a>
+    
     </div>
 
     <table class="table table-bordered table-striped">
@@ -46,6 +48,7 @@ $all_result = mysqli_query($conn, "SELECT * FROM packages");
                     <td>
                         <a href="view_package.php?id=<?php echo $row['id']; ?>" class="btn btn-info btn-xs">View</a>
                         <a href="edit_package.php?id=<?php echo $row['id']; ?>" class="btn btn-warning btn-xs">Edit</a>
+                        
                     </td>
                 </tr>
             <?php endwhile; ?>

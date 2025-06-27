@@ -1,6 +1,10 @@
+
+
 <?php 
-if (session_status() === PHP_SESSION_NONE) 
-{ session_start(); } 
+if (session_status() === PHP_SESSION_NONE) { session_start(); } 
+
+
+$base = "/projects/Travel-Management-System/pro/";
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,21 +21,21 @@ if (session_status() === PHP_SESSION_NONE)
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">Travel System</a>
+      <a class="navbar-brand" href="<?= $base ?>index.php">Travel System</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.php">Home</a></li>
+      <li><a href="<?= $base ?>index.php">Home</a></li>
       <?php if(isset($_SESSION['user'])): ?>
-        <li><a href="users.php">Users</a></li>
+        <li><a href="<?= $base ?>users.php">Users</a></li>
       <?php endif; ?>
-      <li><a href="packages.php">Packages</a></li>
-      <li><a href="bookings.php">Bookings</a></li>
-      <li><a href="about.php">About</a></li>
+      <li><a href="<?= $base ?>packages.php">Packages</a></li>
+      <li><a href="<?= $base ?>bookings.php">Bookings</a></li>
+      <li><a href="<?= $base ?>about.php">About</a></li>
       <?php if(isset($_SESSION['user'])): ?>
-        <li><a href="logout.php">Logout</a></li>
+        <li><a href="<?= $base ?>logout.php">Logout</a></li>
       <?php else: ?>
-        <li><a href="signin.php">Sign In</a></li>
-        <li><a href="signup.php">Sign Up</a></li>
+        <li><a href="<?= $base ?>signin.php">Sign In</a></li>
+        <li><a href="<?= $base ?>signup.php">Sign Up</a></li>
       <?php endif; ?>
     </ul>
   </div>
